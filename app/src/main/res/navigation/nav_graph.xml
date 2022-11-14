@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragment_more_info_task">
+
+    <fragment
+        android:id="@+id/fragment_more_info_task"
+        android:name="com.example.list2do.ui.FragmentMoreInfoTask"
+        android:label="fragment_more_info_task"
+        tools:layout="@layout/fragment_more_info_task" />
+</navigation>
