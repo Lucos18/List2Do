@@ -1,12 +1,10 @@
 package com.example.list2do.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.example.list2do.R
+import androidx.fragment.app.Fragment
 import com.example.list2do.databinding.FragmentToDoListBinding
 
 
@@ -23,13 +21,4 @@ class FragmentToDoList : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.bottomNavigationView.setOnItemReselectedListener {
-            when(it.itemId){
-                R.id.labelListItem->findNavController().navigate(R.id.action_fragmentToDoList_task_to_fragmentToDoDetail)
-            }
-            true
-        }
-    }
 }
