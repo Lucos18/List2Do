@@ -3,11 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/fragment_more_info_task">
+    app:startDestination="@id/fragmentToDoList">
 
     <fragment
-        android:id="@+id/fragment_more_info_task"
-        android:name="com.example.list2do.ui.FragmentMoreInfoTask"
-        android:label="fragment_more_info_task"
-        tools:layout="@layout/fragment_more_info_task" />
+        android:id="@+id/fragmentToDoList"
+        android:name="com.example.list2do.ui.FragmentToDoList"
+        android:label="fragmentToDoList"
+        tools:layout="@layout/fragment_to_do_list">
+        <action
+            android:id="@+id/action_fragment_more_info_task_to_fragmentToDoDetail"
+            app:destination="@id/fragmentToDoDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentToDoDetail"
+        android:name="com.example.list2do.ui.FragmentToDoDetail"
+        android:label="FragmentToDoDetail" >
+        <action
+            android:id="@+id/action_fragmentToDoDetail_to_fragment_more_info_task"
+            app:destination="@id/fragmentToDoList" />
+    </fragment>
 </navigation>

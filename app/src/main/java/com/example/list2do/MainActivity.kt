@@ -13,6 +13,7 @@ import com.example.list2do.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var bottomBarNav: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,9 +24,11 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+
+
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        bottomBarNav = AppBarConfiguration(navController.graph)
+        setupActionBarWithNavController(navController, bottomBarNav)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

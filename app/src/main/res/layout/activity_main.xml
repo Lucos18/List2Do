@@ -40,5 +40,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <include layout="@layout/bottom_navigation_bar"></include>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
