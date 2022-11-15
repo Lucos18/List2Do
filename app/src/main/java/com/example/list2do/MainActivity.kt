@@ -4,11 +4,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.list2do.databinding.ActivityMainBinding
+import com.example.list2do.ui.labelsfragments.FragmentLabelDetail
+import com.example.list2do.ui.toDoFragments.FragmentToDoDetail
+import com.example.list2do.ui.toDoFragments.FragmentToDoList
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,11 +29,18 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
-
-
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
+        val navController = navHostFragment.navController
         bottomBarNav = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, bottomBarNav)
+        replaceFragment(FragmentToDoList())
+        binding.bottomNavigationView.setOnNavigationItemSelectedListener {
+            when (it.itemId){
+                R.id.labelListItem -> replaceFragment(FragmentLabelDetail())
+                R.id.checkListItem -> replaceFragment(FragmentToDoList())
+            }
+            true
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -51,5 +63,11 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+    private fun replaceFragment(fragment: Fragment){
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.nav_host_fragment_content_main, fragment)
+        fragmentTransaction.commit()
     }
 }

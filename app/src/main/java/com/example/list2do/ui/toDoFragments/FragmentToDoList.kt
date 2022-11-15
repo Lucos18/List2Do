@@ -1,4 +1,4 @@
-package com.example.list2do.ui
+package com.example.list2do.ui.toDoFragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
