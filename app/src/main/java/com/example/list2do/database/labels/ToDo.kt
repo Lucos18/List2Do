@@ -18,9 +18,9 @@ import com.example.list2do.database.todo.Label
         )]
 )
 data class ToDo(
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "content") val content: String,
     @ColumnInfo(name = "priority") val priority: Int,
-    @ColumnInfo(name = "id_label") val labelId: Int
+    @ColumnInfo val labelId: Int?
 )
