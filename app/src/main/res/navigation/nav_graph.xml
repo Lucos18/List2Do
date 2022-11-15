@@ -11,7 +11,7 @@
         android:label="fragmentToDoList"
         tools:layout="@layout/fragment_to_do_list">
         <action
-            android:id="@+id/action_fragment_more_info_task_to_fragmentToDoDetail"
+            android:id="@+id/action_fragmentToDoList_task_to_fragmentToDoDetail"
             app:destination="@id/fragmentToDoDetail" />
     </fragment>
     <fragment
@@ -19,7 +19,7 @@
         android:name="com.example.list2do.ui.FragmentToDoDetail"
         android:label="FragmentToDoDetail" >
         <action
-            android:id="@+id/action_fragmentToDoDetail_to_fragment_more_info_task"
+            android:id="@+id/action_fragmentToDoDetail_to_fragmentToDoList"
             app:destination="@id/fragmentToDoList" />
     </fragment>
 </navigation>

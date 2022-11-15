@@ -3,12 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/checkListItem"
         android:title="check list"
-        android:icon="@drawable/checklist"/>
+        android:icon="@drawable/drawable_checklist"/>
     <item
-        android:id="@+id/profileFragment"
-        android:title="name to change"
-        android:icon="@drawable/check"/>
+        android:id="@+id/labelListItem"
+        android:title="label list"
+        android:icon="@drawable/drawable_check"/>
 
 </menu>
