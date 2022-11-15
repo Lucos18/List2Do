@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.list2do.R
-import com.example.list2do.databinding.FragmentMoreInfoTaskBinding
+import com.example.list2do.databinding.FragmentToDoListBinding
 
 
-class FragmentMoreInfoTask : Fragment() {
-    private var _binding: FragmentMoreInfoTaskBinding? = null
+class FragmentToDoList : Fragment() {
+    private var _binding: FragmentToDoListBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,7 +18,7 @@ class FragmentMoreInfoTask : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentMoreInfoTaskBinding.inflate(inflater, container, false)
+        _binding = FragmentToDoListBinding.inflate(inflater, container, false)
         return binding.root
     }
 }
